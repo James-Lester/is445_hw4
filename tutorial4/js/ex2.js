@@ -1,22 +1,23 @@
-function isStrongPassword(password) {
-   // TODO: Write your solution here 
-   const hasNoPw = /^(?!.*(password)).*$/  
-   const hasUpper = /[A-Z]/;
-   const minLength = /(?=(?:\w){8,})/;
-   // console.log(password);
-   // console.log(hasNoPw.test(password));
-   // console.log(hasUpper.test(password));
-   // console.log(minLength.test(password));
-   return hasNoPw.test(password) && hasUpper.test(password) && minLength.test(password);
+function getStatistics(numbers) {
+   let n = new Array(...numbers);
+   let obj = {
+      "firstElement": n[0],
+      "lastElement": n[n.length -1],
+      "length": n.length
+   };
+
+   return obj;
 }
 
-console.log("Testing isStrongPassword()...");
+console.log("Testing getStatistics()...");
 
-console.log("Qwerty - " + isStrongPassword("Qwerty"));                  // false - Too short
-console.log("passwordQwerty - " + isStrongPassword("passwordQwerty"));  // false - Contains "password"
-console.log("qwerty123 - " + isStrongPassword("qwerty123"));            // false - No uppercase chars
-console.log("Qwerty123 - " + isStrongPassword("Qwerty123"));            // true
+let arr = Array.from({length: 40}, () => Math.floor(Math.random() * 40));
+console.log(getStatistics(arr));
+arr = Array.from({length: 40}, () => Math.floor(Math.random() * 40));
+console.log(getStatistics(arr));
+arr = Array.from({length: 40}, () => Math.floor(Math.random() * 40));
+console.log(getStatistics(arr));
+arr = Array.from({length: 40}, () => Math.floor(Math.random() * 40));
+console.log(getStatistics(arr));
 
-
-// Do NOT remove the following line:
-export default isStrongPassword;
+export default getStatistics;

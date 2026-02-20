@@ -1,19 +1,21 @@
-function sortEvens(numArray) {
-    let newArray = [];
-    numArray.forEach(i => {
-        if (i % 2 === 0) {
-            newArray.push(i);
+function guessNumber() {
+    const rand = Math.floor(Math.random() * 100) + 1;
+
+    let correct = false;
+    let guess;
+    do {
+        guess = Number(prompt("Enter a number betwixt 1 and 100, inclusive"));
+        if (rand > guess) {
+            console.log("Too low, guess again.")
         }
-    });
-    newArray.sort((a, b) => parseFloat(a) - parseFloat(b))
-    return newArray;
+
+        if (rand < guess) {
+            console.log("Too high, guess again.")
+        }
+
+        if (rand === guess) {
+            console.log("Correct")
+            correct = true;
+        }
+    } while (!correct);
 }
-
-console.log("Testing sortEvens()...");
-let nums = [4, 2, 9, 1, 8];
-let evenNums = sortEvens(nums);
-console.log(evenNums);
-
-
-// Do NOT remove the following line:
-export default sortEvens;   

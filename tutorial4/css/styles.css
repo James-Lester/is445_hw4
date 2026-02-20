@@ -1,0 +1,29 @@
+body {
+    font-family: monospace;
+    background-color: #f4f4f4;
+    color: #222;
+    margin: 40px;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #49825d;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #555;
+}

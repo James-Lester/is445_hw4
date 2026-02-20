@@ -1,25 +1,29 @@
-function printSum(x, y) {
-   if (isNaN(x) && isNaN(y)) {
-      console.log(`'${x}' and '${y}' are not numbers.`);
-      return;
-   }
-   if (isNaN(x) || isNaN(y)) {
-      console.log(`'${isNaN(x) ? x : y}' is not a number`);
+function validateNumber(x) {
+   const n = Number(x);
+
+   if (
+      Number.isNaN(n) ||
+      typeof x === "boolean" ||
+      x === "" ||
+      x.trim?.() === "" ||
+      n > 100 ||
+      n < 1
+   ) {
+      console.log(`Sorry, ${x} is not a valid entry.`);
       return;
    }
 
-   console.log(`${parseFloat(x) + parseFloat}`)
-   
+   console.log(`Thank you! You entered ${x}, a valid number.`);
 }
 
-console.log("Testing printSum()...");
+console.log("Testing validateNumber()...");
 
-printSum(3, 6);            // 9
-printSum(3.5, 6.1);        // 9.6
-printSum("hello", 6);      // 'hello' is not a number
-printSum(10, "hi");        // 'hi' is not a number
-printSum("hello", "hi");   // 'hello' and 'hi' are not numbers
+validateNumber(3);
+validateNumber(3.5); 
+validateNumber("hello");
+validateNumber(" "); 
+validateNumber(true);
 
 
 // Do NOT remove the following line
-export default printSum;
+export default validateNumber;
