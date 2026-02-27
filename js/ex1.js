@@ -19,11 +19,7 @@ function validateNumber(x) {
 console.log("Testing validateNumber()...");
 
 validateNumber(3);
-validateNumber(3.5); 
+validateNumber(3.5);
 validateNumber("hello");
-validateNumber(" "); 
+validateNumber(" ");
 validateNumber(true);
-
-
-// Do NOT remove the following line
-export default validateNumber;

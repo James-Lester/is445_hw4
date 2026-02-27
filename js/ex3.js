@@ -3,8 +3,15 @@ function guessNumber() {
 
     let correct = false;
     let guess;
+    let guesses = 0;
     do {
         guess = Number(prompt("Enter a number betwixt 1 and 100, inclusive"));
+        if (guess == null) {
+            return;
+        }
+        else {
+            guesses++;
+        }
         if (rand > guess) {
             console.log("Too low, guess again.")
         }
@@ -18,4 +25,6 @@ function guessNumber() {
             correct = true;
         }
     } while (!correct);
+
+    alert(`You guessed correctly after ${guesses} tries.`)
 }
